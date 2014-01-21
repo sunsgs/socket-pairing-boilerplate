@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>Socket Pairing - Desktop</title>
+</head>
+<body>
+	<div id="session-id"></div>
+	<div id="qrcode"></div>
+	<div id="debug"></div>
+
+	<script src="//code.jquery.com/jquery-latest.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r61/three.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="js/DesktopClient.js"></script>
+	<script src="js/ThreeJSDemo.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var threeJSDemo = new ThreeJSDemo();
+			var desktopClient = new DesktopClient(threeJSDemo);
+		});
+	</script>
+	<style type="text/css">
+		canvas{
+			position: absolute;
+			top:30px;
+			left:0;
+		}
+	</style>
+</body>
+</html>
