@@ -27,7 +27,7 @@ class MotionCapture
 			alpha: 0
 			beta: 0
 			gamma: 0
-			multiplier: 2
+			multiplier: 0.1
 			tilt: 30
 
 		@acceleration =

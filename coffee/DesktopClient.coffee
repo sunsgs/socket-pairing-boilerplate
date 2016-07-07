@@ -21,7 +21,7 @@ class DesktopClient
 	onInitState: (data) ->
 		console.log 'onInitState',data
 		$("#session-id").append "Scan QR Code or type this code into your phone:  "+data.session
-		$('#qrcode').qrcode(window.document.location.host+"/mobile.html?sessionID="+data.session)
+		$('#qrcode').qrcode("//"+window.document.location.host+"/mobile.html?sessionID="+data.session)
 
 	onConnectionEstablished: (data) ->
 		console.log 'onConnectionEstablished',data
@@ -34,8 +34,8 @@ class DesktopClient
 		str += "gyro.y "+@roundTwoDigit(data.gyro.y)+"<br>"
 		str += "gyro.z "+@roundTwoDigit(data.gyro.z)+"<br>"
 
-		if @threeJS?
-			@threeJS.render(data.acceleration.gamma, data.acceleration.beta, data.acceleration.alpha)
+		if @threeJS? 
+			@threeJS.render(data.gyro.gamma, data.gyro.beta, data.gyro.alpha)
 		else
 			str += "gyro.alpha "+@roundTwoDigit(data.gyro.alpha)+"<br>"
 			str += "gyro.beta "+@roundTwoDigit(data.gyro.beta)+"<br>"

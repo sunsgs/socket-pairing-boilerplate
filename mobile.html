@@ -2,26 +2,26 @@
 <head>
 	<title>Socket Pairing - Mobile</title>
 </head>
-<body>
+<body> 
 	<form id="session-form">
 		<input id="session-id" placeholder="desktop session id"></input>
 		<input type="submit"></input>
 	</form>
 
-<script src="//code.jquery.com/jquery-latest.min.js"></script>
-<script src="/socket.io/socket.io.js"></script>
-<script src="js/MotionCapture.js"></script> 
-<script src="js/MobileClient.js"></script>
-<script type="text/javascript">
-	$(document).ready(function(){
-		var motionCapture = new MotionCapture(),
-			mobileClient = new MobileClient(motionCapture);
+	<script src="//code.jquery.com/jquery-latest.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="js/MotionCapture.js"></script> 
+	<script src="js/MobileClient.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var motionCapture = new MotionCapture(),
+				mobileClient = new MobileClient(motionCapture);
 
-		$("#session-form").submit(function(e){
-			e.preventDefault();
-			mobileClient.broadcastConnection($("#session-id").val());
-		})
-	});
-</script>
+			$("#session-form").submit(function(e){
+				e.preventDefault();
+				mobileClient.broadcastConnection($("#session-id").val());
+			})
+		});
+	</script>
 </body>
 </html>
